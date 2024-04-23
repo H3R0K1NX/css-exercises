@@ -31,14 +31,14 @@ button {
   background-color: white;
   border: 1px solid black;
   border-radius: 10px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, -50%);
   pointer-events: none;
   opacity: 0%;
   text-align: center;
+  transition: transform 1s, opacity 0.5s;
+  transform: translate(-50%, -130%);
 }
 
 .popup-modal p {
@@ -54,10 +54,24 @@ button {
 }
 
 .popup-modal.show {
+  position: absolute;
   opacity: 100%;
   pointer-events: all;
+  transform: translate(-50%, -50%);
+  /* top: 300px; */
+
+  /* animation-name: model_ease_in;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; */
 }
 
 .backdrop.show {
   opacity: 30%;
 }
+
+
+/* @keyframes model_ease_in {
+  from {top: 0px};
+  to {top: 300px};
+} */
